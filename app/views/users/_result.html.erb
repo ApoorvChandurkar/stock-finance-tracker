@@ -1,0 +1,11 @@
+<div class="stock-info">
+  <%= render 'layouts/messages'%>
+</div>
+
+<% if @stock %>
+  <div class="card card-header stock-info">
+    <strong>Ticker: </strong> <%= @stock.ticker %>
+    <strong>Name: </strong> <%= @stock.name %>
+    <strong>Price: </strong> <%= @stock.last_price %>
+  </div>
+<% end %>
