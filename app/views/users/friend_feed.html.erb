@@ -33,7 +33,10 @@
           <tr>
             <td><%= followee.full_name %></td>
             <td><%= followee.email %></td>
-            <td><%= link_to 'Stop following', '#', data: { confirm: "Are you sure" }, class: "btn btn-sm btn-warning", method: :delete %></td>
+            <td>
+              <%= link_to 'Stop following', following_path(followee), data: { confirm: "Are you sure" }, class: "btn btn-sm btn-warning", method: :delete %>
+              <%= link_to 'View Profile', user_path(followee), class: "btn btn-success btn-sm ml-4" %>
+            </td>
           </tr>
         <% end %>
         </tbody>
