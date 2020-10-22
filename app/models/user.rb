@@ -7,7 +7,7 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
 
   def count_under_limit?
-      stocks.count < 10
+    stocks.count < 10
   end
 
   def already_tracking?(ticker_symbol)
@@ -20,4 +20,8 @@ class User < ApplicationRecord
     count_under_limit? && !already_tracking?(ticker_symbol)
   end
 
+  def full_name
+    return "#{first_name} #{last_name}" if first_name || last_name
+    "Anonymous"
+  end
 end
