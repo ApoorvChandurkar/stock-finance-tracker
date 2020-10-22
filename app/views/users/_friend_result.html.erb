@@ -1,0 +1,12 @@
+<div class="stock-info">
+  <%= render 'layouts/messages'%>
+</div>
+
+<% if @friend %>
+  <div class="card card-header stock-info">
+    <strong>Name: </strong> <%= @friend %>
+    <strong>email: </strong> <%= @friend %>
+    
+    <%= link_to 'Add friend?', '#', class: "btn btn-success ml-4", method: :post %>
+  </div>
+<% end %>
